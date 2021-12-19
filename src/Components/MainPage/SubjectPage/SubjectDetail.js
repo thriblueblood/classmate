@@ -1,7 +1,18 @@
-import { Typography } from "@mui/material";
+import { Typography,MenuItem, TextField } from "@mui/material";
 import {useState} from "react";
 
 import "./SubjectPage.css";
+
+const weekSubject = [
+  {
+    number : 1,
+    date : "12/12/21"
+  },
+  {
+    number : 2,
+    date : "24/12/21"
+  }
+]
 
 export default function SubjectDetail() {
     const [tab, setTab] = useState(1);
@@ -21,6 +32,14 @@ export default function SubjectDetail() {
               <div onClick={() => changeTab(1) } className={tab === 1 ? "tabs active-tabs": "tabs"}>Materials</div>
               <div onClick={() => changeTab(2)} className={tab === 2 ? "tabs active-tabs": "tabs"}>Assignments </div>
               <div onClick={() => changeTab(3)} className={tab === 3 ? "tabs active-tabs": "tabs"}>Notes</div>
+              <TextField select>
+              {weekSubject.map((week) => (
+                <MenuItem key={week.number} value={ week.number}>
+                {"Week "+week.number+","+week.date}
+                </MenuItem>
+              ))}
+              </TextField>
+
           </div>
           <div className="content_container">
 

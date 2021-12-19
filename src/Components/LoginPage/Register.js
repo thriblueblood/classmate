@@ -9,11 +9,24 @@ import { Typography } from "@mui/material";
 
 import {useNavigate} from "react-router-dom";
 
+import {useState} from "react";
+
 export default function Register() {
+
+    const [email, setEmail] = useState('');
+    const [name, setName] = useState('');
+    const [usrname, setUsrname] = useState('');
+    const [password, setPassword] = useState('');
+
     const navigate = useNavigate();
   
-    const handleRouteSignIn = () =>{ 
+    const handleBack = () =>{ 
       navigate("/");
+    }
+
+    const onSignUp = () => {
+      console.log(email + name + usrname + password)
+      handleBack()
     }
 
     return (
@@ -38,26 +51,38 @@ export default function Register() {
                       class="login-text"
                       type="text"
                       placeholder="Email"
+                      onChange={ (e) => {
+                        setEmail(e.target.value);
+                      }}
                     />
                     <input
                       class="login-text"
                       type="text"
                       placeholder="Your Name"
+                      onChange={ (e) => {
+                        setName(e.target.value);
+                      }}
                     />
                                         <input
                       class="login-text"
                       type="text"
                       placeholder="Username(AKA)"
+                      onChange={ (e) => {
+                        setUsrname(e.target.value);
+                      }}
                     />
                                         <input
                       class="login-text"
                       type="password"
                       placeholder="Password"
+                      onChange={ (e) => {
+                        setPassword(e.target.value);
+                      }}
                     />
-                    <button class="login-btn" onClick={handleRouteSignIn}>Sign Up</button>
+                    <button class="login-btn" onClick={onSignUp}>Sign Up</button>
                   </div>
 
-                  <div className="back_button" onClick={handleRouteSignIn}><Typography color="primary.main"> &lt; Back </Typography></div>
+                  <div className="back_button" onClick={handleBack}><Typography color="primary.main"> &lt; Back </Typography></div>
                 </Box>
               </Typography>
             </Grid>
