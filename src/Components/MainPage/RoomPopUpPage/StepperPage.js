@@ -14,11 +14,11 @@ const steps = [
 ];
 
 
-function getStepContent(step) {
+function getStepContent(step, className, setClassname) {
   switch (step) {
     case 0:
       return (
-       <NameClassPage/>
+       <NameClassPage classname={className} setClassname ={setClassname}/>
       );
     case 1:
       return <AddSubjectMainPage/>
@@ -33,6 +33,9 @@ export default function StepperPage(props) {
   const {setOpenPopUp} = props
 
   const [activeStep, setActiveStep] = React.useState(0);
+
+  const [classname, setClassname] = React.useState('');
+  const [school, setSchool] = React.useState('');
 
   const handleNext = () => {
     setActiveStep((previousActiveStep) => previousActiveStep + 1);
@@ -59,7 +62,7 @@ export default function StepperPage(props) {
           </Step>
         ))}
       </Stepper>
-      {getStepContent(activeStep)}
+      {getStepContent(activeStep, classname, setClassname)}
       <br />
       {isFirstStep() ? (
         <span></span>
@@ -68,6 +71,7 @@ export default function StepperPage(props) {
       )}
       {isLastStep() ? (
         <Button className="stepper_button" onClick = {() => 
+                // console.log(classname)
                 setOpenPopUp(false)
                 }>Finish</Button>
       ) : (
