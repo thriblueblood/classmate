@@ -20,7 +20,6 @@ const subjects = [
   },
 ];
 
-
 export default function SubjectPage() {
 
 const handleClick = (subject) => {
@@ -35,12 +34,12 @@ const handleClick = (subject) => {
 
       {subjects.map((subject) => (
         <div>
-        <Link to={`/main/subject/${subject.key}`}>
+        <Link to={`/main/subject/${subject.key}`} style={{textDecoration:"none"}}>
         <Card backgroundColor="secondary.main">
             <CardActions onClick={handleClick}>
-              <CardContent >
-                <Typography variant="h5">{subject.title}</Typography>
-                <Typography variant="subtitle2">{subject.professor}</Typography>
+              <CardContent>
+                <Typography variant="h3" fontSize="2rem" color="primary.dark" >{subject.title}</Typography>
+                <Typography variant="h4" fontSize="1rem" color="primary.main">{subject.professor}</Typography>
               </CardContent>
             </CardActions>
           </Card>

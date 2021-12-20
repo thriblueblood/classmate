@@ -5,6 +5,7 @@ import Step from "@mui/material/Step";
 import Button from "@mui/material/Button";
 import NameClassPage from "./NameClassPage";
 import AddSubjectMainPage from "./AddSubjectMainPage";
+import NameBestMatePage from "./NameBestMatePage";
 
 const steps = [
   "Name your class",
@@ -22,7 +23,7 @@ function getStepContent(step) {
     case 1:
       return <AddSubjectMainPage/>
     case 2:
-      return "Finish";
+      return <NameBestMatePage/>;
     default:
       return "Default";
   }
@@ -63,14 +64,14 @@ export default function StepperPage(props) {
       {isFirstStep() ? (
         <span></span>
       ) : (
-        <Button onClick={() => handleBack()}>Back</Button>
+        <Button className="stepper_button_left" onClick={() => handleBack()}>Back</Button>
       )}
       {isLastStep() ? (
-        <Button onClick = {() => 
+        <Button className="stepper_button" onClick = {() => 
                 setOpenPopUp(false)
                 }>Finish</Button>
       ) : (
-        <Button onClick={() => handleNext()}>Next</Button>
+        <Button className="stepper_button" onClick={() => handleNext()}>Next</Button>
       )}
     </div>
   );

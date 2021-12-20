@@ -50,3 +50,11 @@
     width:100%;
     height: 100vh;
   }
+
+  .drop_down{
+    margin: 5px;
+  }
+
+  .text{
+    text-decoration: none;
+  }

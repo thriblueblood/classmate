@@ -20,7 +20,7 @@ export default function DialogPopUp(props){
       }
     return (
         <Dialog open={openPopUp}>
-            <button onClick = {() => 
+            <button className="dialog_exit_button" onClick = {() => 
                 setOpenPopUp(false)
                 }>
             <ClearIcon />

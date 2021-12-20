@@ -114,7 +114,8 @@
   .content__footer {
     width: 100%;
     position: absolute;
-    bottom: 0;
+    bottom: 2rem;
+    box-shadow: 10px 10px 5px grey;
   }
   .sendNewMessage {
     background-color: #fff;

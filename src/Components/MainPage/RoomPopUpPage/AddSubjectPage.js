@@ -8,6 +8,7 @@ import {
   Grid,
 } from "@mui/material";
 import React, { useState } from "react";
+import "./DialogPopUp.css"
 
 const days = [
   {
@@ -126,12 +127,12 @@ export default function AddSubjectPage() {
           {isEqualOne() ? (
             <span/>
           ) : (
-            <button type="button" onClick={() => setNumberTime(numberTime - 1)}>
+            <button className="delete_time_button"  type="button" onClick={() => setNumberTime(numberTime - 1)}>
               Delete time
             </button>
           )}
           
-            <button type="button" onClick={() => setNumberTime(numberTime + 1)}>
+            <button className="add_time_button" type="button" onClick={() => setNumberTime(numberTime + 1)}>
               Add time
             </button>
           </div>
