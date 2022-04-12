@@ -42,11 +42,11 @@ export default function Register() {
                 <img class="logo" src={Logo} alt="brand logo" />
               </Grid>
               <Grid container direction="column" alignItems="center" justifyItems="center">
-                <CustomInput placeholder="Email" onChange={ (e) => {setEmail(e.target.value);}}/>
-                <CustomInput placeholder="Full Name" onChange={ (e) => {setName(e.target.value);}}/>
-                <CustomInput placeholder="Phone Number" onChange={ (e) => {setPhnNumber(e.target.value);}}/>
-                <CustomInput placeholder="Username" onChange={ (e) => {setUsrname(e.target.value);}}/>
-                <CustomInput placeholder="Password" onChange={ (e) => {setPassword(e.target.value);}}/>
+                <CustomInput placeholder="Email" onChange={(e) => { setEmail(e.target.value); }} />
+                <CustomInput placeholder="Full Name" onChange={(e) => { setName(e.target.value); }} />
+                <CustomInput placeholder="Phone Number" onChange={(e) => { setPhnNumber(e.target.value); }} />
+                <CustomInput placeholder="Username" onChange={(e) => { setUsrname(e.target.value); }} />
+                <CustomInput placeholder="Password" onChange={(e) => { setPassword(e.target.value); }} />
                 <Button size="medium" variant="contained" style={{ width: "105%", marginTop: "0.5rem", marginBottom: "2rem" }} onClick={onSignUp}> Register </Button>
               </Grid>
             </Box>
@@ -57,12 +57,12 @@ export default function Register() {
                 <Typography variant="h3" fontSize="1rem">Already have an account?</Typography>
               </Grid>
               <Grid item>
-                <Typography variant="h3" fontSize="1rem" color="primary.main" sx = {{cursor:"pointer"}} onClick={handleBack}>Log in</Typography>
+                <Typography variant="h3" fontSize="1rem" color="primary.main" sx={{ cursor: "pointer" }} onClick={handleBack}>Log in</Typography>
               </Grid>
             </Box>
           </Grid>
         </Grid>
-        
+
       </Box>
     </ThemeProvider>
   );
