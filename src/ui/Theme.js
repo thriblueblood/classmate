@@ -35,6 +35,10 @@ export default createTheme({
         h4 :{
             fontWeight : 300
         },
+        overline : {
+            fontStyle: 'bold',
+            fontWeight: 700
+        }
     }
   });
 
