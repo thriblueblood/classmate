@@ -20,7 +20,7 @@ function LoginPage() {
   }
 
   const handleRouteHome = () => {
-    navigate("/main");
+    navigate("/main/home");
   }
 
   return (
@@ -35,7 +35,7 @@ function LoginPage() {
               <Grid container direction="column" alignItems="center" justifyItems="center">
                 <CustomInput placeholder="Email or username" />
                 <CustomInput placeholder="Password" />
-                <Button size="medium" variant="contained" style={{ width: "105%", marginTop: "0.5rem", marginBottom: "2rem" }}> Log in </Button>
+                <Button onClick={handleRouteHome} size="medium" variant="contained" style={{ width: "105%", marginTop: "0.5rem", marginBottom: "2rem" }}> Log in </Button>
               </Grid>
             </Box>
           </Grid>

@@ -4,7 +4,7 @@ import AddIcon from '@mui/icons-material/Add';
 import styled from '@emotion/styled';
 
 import * as React from "react";
-
+import { Link } from "react-router-dom";
 import { AddRoomPopup } from './AddRoomPopup';
 
 const CustomSideBarItem = styled(Avatar)(() => ({
@@ -35,18 +35,18 @@ export default function SideBar(){
         <Stack alignItems="center">
             <Box>
             <Divider/>
-            <CustomSideBarItem>
-               <HomeIcon/>
+            <CustomSideBarItem component={Link} to="home">
+               <HomeIcon />
             </CustomSideBarItem>
             </Box>
             <Divider sx={{width:'70%', backgroundColor:"white", margin:"5% 0%"}}/>
-            <CustomSideBarItem variant='rounded'>
+            <CustomSideBarItem component={Link} to="room" variant='rounded'>
                 SE
             </CustomSideBarItem>
             <CustomSideBarItem onClick={handleClickOpen} >
                <AddIcon/>
             </CustomSideBarItem>
-            <Avatar sx={{position:"fixed", bottom:"0", marginBottom:"1rem"}}></Avatar>
+            <Avatar component={Link} to="profile" sx={{position:"fixed", bottom:"0", marginBottom:"1rem"}}></Avatar>
         </Stack>
         <AddRoomPopup open={open} onClose={handleClose} />
       </div>
